@@ -45,7 +45,11 @@ public class Student{
     }
 
     public void takeCourse(Course course){
-
+        if (course.getNumberOfEnrolledStudents() +1 <= course.getMaximumNumberOfStudents()){
+            courseAndGrade.put(course.getCourseName, 0);
+        }else {
+            System.out.println("Could not take course as there would be too many students.")
+        }
     }
 
     public void dropCourse(Course course){
@@ -63,7 +67,7 @@ public class Student{
     public int[] getGrades(){
         int[] grades = new int[courseAndGrade.size()];
 
-        return new int[1];
+        return grades;
     }
 
     public float getGradesAverage(){
