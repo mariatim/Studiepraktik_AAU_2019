@@ -29,6 +29,7 @@ public class Student{
      * **/
     public String name;
     private HashMap<String, int> courseAndGrade = new HashMap<String, int>();
+    private University attendedUniversity;
 
     public Student(){
         this.name = "Unassigned";
@@ -36,6 +37,14 @@ public class Student{
 
     public  Student(String name){
         this.name = name;
+    }
+
+    public void setName(String newName){
+        this.name = newName;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void attendUniversity(University university){
