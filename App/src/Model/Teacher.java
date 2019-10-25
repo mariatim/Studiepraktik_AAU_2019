@@ -31,13 +31,15 @@ public class Teacher{
      *
      * **/
 
+    //variables: name, age
     private String name = "";
     private int age = 0;
-    private ArrayList<University> universities = new ArrayList<>;
-    private ArrayList<Course> courses = new ArrayList<>;
-    private ArrayList<Student> students = new ArrayList<>;
+    //ArrayLists: universities, courses, students
+    private ArrayList<University> universities = new ArrayList<>();
+    private ArrayList<Course> courses = new ArrayList<>();
+    private ArrayList<Student> students = new ArrayList<>();
 
-    //constructor
+    //constructors
     public Teacher(){
         this.name = "no name";
     }
@@ -46,24 +48,36 @@ public class Teacher{
         this.age = newAge;
     }
 
-    public void setName(String newName){ this.name = newName; }
+    public void setName(String newName){
+        this.name = newName;
+    }
 
-    public void setAge(int newAge){ this.age = newAge; }
+    public void setAge(int newAge){
+        this.age = newAge;
+    }
 
-    public ArrayList<Course> getCoursesTaught(){ return Course; }
+    public ArrayList<Course> getCoursesTaught(){
+        return courses;
+    }
 
-    public ArrayList<Course> getPreviousCoursesTaught(){ return Course; }
+    public ArrayList<Course> getPreviousCoursesTaught(){
+        return courses;
+    }
 
-    public students[] getAllStudentTaught(){ return student; }
+    public ArrayList<Student> getAllStudentTaught(){
+        return students;
+    }
 
-    public void gradeToStudent(students student){
+
+
+    public void gradeToStudent(Student student){
 
     }
 
     public void printInfo(){
-        System.out.print(this.name + " teaches in: " + this.courses[0].getName());
+        System.out.print(this.name + " teaches in: " + this.courses.get(1).getName());
         for(int i = 1; i < getCoursesTaught().length; i++){
-            System.out.print(", " + this.courses[i].getName());
+            System.out.print(", " + this.courses.get(i).getName());
         }
         System.out.println(" on " + this.universities.getName() + ". ");
         System.out.println("All students taught are: " + this.getAllStudentTaught());
