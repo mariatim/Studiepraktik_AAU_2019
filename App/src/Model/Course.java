@@ -33,7 +33,7 @@ public class Course {
 
    private ArrayList <Student> students;
 
-    public Course(String name,  String XXbeskrivelse){
+    public Course(String name,  String XXbeskrivelse, ArrayList<Student>.size){
       courseName = name;
       description = XXbeskrivelse;
 
