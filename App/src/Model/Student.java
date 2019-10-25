@@ -1,4 +1,5 @@
 package Model;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Student{
@@ -28,7 +29,7 @@ public class Student{
      *
      * **/
     public String name;
-    private HashMap<Course, int> courseAndGrade = new HashMap<Course, int>();
+    private HashMap<Course, Integer> courseAndGrade = new HashMap<Course, Integer>();
     private University attendedUniversity;
 
     public Student(){
@@ -55,25 +56,27 @@ public class Student{
     public void takeCourse(Course course){
         if (course.getAvailablePlaces()>0){
             courseAndGrade.put(course, 0);
+            course.getEnrolledStudents().add(this); // needs change, should be method in Course object
         }else {
-            System.out.println("Could not take course as there would be too many students.")
+            System.out.println("Could not take course as there would be too many students.");
         }
     }
 
     public void dropCourse(Course course){
         courseAndGrade.remove(course);
-        course.getEnrolledStudents().remove(this);
+        course.getEnrolledStudents().remove(this);//needs change
     }
 
-    public void getCoursesTaken(){
-        for ( i:
-             ) {
-            
+    public ArrayList<Course> getCoursesTaken(){
+        ArrayList<Course> tempCourses = new ArrayList<Course>();
+        for (Course course: courseAndGrade.keySet()) {
+            tempCourses.add(course);
         }
+        return  tempCourses;
     }
 
     public void beGraded(int grade, Teacher teacher, Course course){
-
+        courseAndGrade.replace(course,grade);
     }
 
     public int[] getGrades(){
@@ -101,7 +104,6 @@ public class Student{
 
 
     public void printInfo(){
-
     }
 
 }
