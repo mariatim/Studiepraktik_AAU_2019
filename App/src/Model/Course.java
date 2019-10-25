@@ -27,6 +27,11 @@ public class Course {
      *
      * **/
 
+    public  static  void  main(String[]){
+        System.out.println("Hallo my fellow Americans");
+
+    }
+
     public Course(University university){
 
     }
