@@ -68,11 +68,15 @@ public class Student{
 
     public float getGradesAverage(){
         int sumOfGrades = 0;
-        for (int i : courseAndGrade.value()){
-            sumOfGrades += i;
-        }
+        if(courseAndGrade.size() > 0){
+            for (int i : courseAndGrade.value()){
+                sumOfGrades += i;
+            }
 
-        return sumOfGrades/(float)courseAndGrade.size();
+            return sumOfGrades/(float)courseAndGrade.size();
+        }else {
+            return -1f;
+        }
     }
 
 
