@@ -56,5 +56,7 @@ public class University {
         return new Teacher[1];
     }
 
-    public void printInfo(){}
+    public void printInfo(){
+        System.out.println("Hello World!!!!!");
+    }
 }
