@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.ArrayList;
+
 public class Course {
 
     /**
@@ -26,30 +28,22 @@ public class Course {
      *
      *
      * **/
-   private ArrayList<String> courseName;
-   private ArrayList<String> description;
+   private String courseName;
+   private String description;
 
-    public  static  void  main(String[]){
+   private ArrayList <Student> students;
 
-        printInfo();
-
-    }
-
-    public Course(University university){
+    public Course(String name,  String XXbeskrivelse){
+      courseName = name;
+      description = XXbeskrivelse;
 
     }
 
-    public String getCourseName(){ return "";
-     courseName.add("Math");
-     courseName.add("Design");
-     courseName.add("Programming");
-    }
+    public  void AddStudent(Student elev) { students.add(elev); }
+    public  void RemoveStudent(Student elev) { students.remove(elev); }
+    public String getCourseName(){ return courseName; }
 
-    public String getDescription() { return "";
-        description.add("Cool Math");
-        description.add("The basics of design");
-        description.add("Progamming 101");
-    }
+    public String getDescription() { return description; }
 
     public int getMaximumNumberOfStudents(){return -1; }
 
@@ -57,9 +51,7 @@ public class Course {
         return new Teacher();
     }
 
-    public Student[] getEnrolledStudents(){
-        return new Student[1];
-    }
+    public ArrayList <Student> getEnrolledStudents(){ return new ArrayList<Student>(); }
 
     public int getNumberOfEnrolledStudents(){
         return -1;
@@ -69,10 +61,7 @@ public class Course {
     }
 
     public void printInfo(){
-        for (int i = 0; i < courseName.size(); i++) {
-            System.out.println(courseName.get(i));
-            System.out.println(description.get(i));
-            System.out.println(" ");
+
         }
 
     }
