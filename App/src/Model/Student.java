@@ -1,4 +1,5 @@
 package Model;
+import java.util.HashMap;
 
 public class Student{
 
@@ -27,15 +28,16 @@ public class Student{
      *
      * **/
     public String name;
-    HashMap<String, int> grades;
+    HashMap<String, int> courseAndGrade;
 
     public Student(){
-        grades = new HashMap<String, int>();
+        this.name = "Unassigned";
+        courseAndGrade = new HashMap<String, int>();
     }
 
     public  Student(String name){
         this.name = name;
-        grades = new HashMap<String, int>();
+        courseAndGrade = new HashMap<String, int>();
     }
 
     public void attendUniversity(University university){
@@ -59,11 +61,18 @@ public class Student{
     }
 
     public int[] getGrades(){
+        int[] grades = new int[courseAndGrade.size()];
+
         return new int[1];
     }
 
     public float getGradesAverage(){
-        return -1;
+        int sumOfGrades = 0;
+        for (int i : courseAndGrade.value()){
+            sumOfGrades += i;
+        }
+
+        return sumOfGrades/(float)courseAndGrade.size();
     }
 
 
