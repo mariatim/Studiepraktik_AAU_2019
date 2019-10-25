@@ -1,5 +1,7 @@
 package Model;
 
+// Sego's teacher class
+
 public class Teacher{
 
     /**
