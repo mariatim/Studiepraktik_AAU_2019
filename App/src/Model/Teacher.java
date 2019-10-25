@@ -1,6 +1,8 @@
 package Model;
 
 
+import java.util.ArrayList;
+
 // Sego's teacher class
 public class Teacher{
 
