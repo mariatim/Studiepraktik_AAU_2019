@@ -1,4 +1,6 @@
 package Model;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class University {
 
@@ -27,36 +29,44 @@ public class University {
      *
      * **/
 
+    private HashMap<Student> enrolledStudents = new HashMap<Student>();
+    private ArrayList<Student> previosly
+    private HashMap<Course, Boolean> availableCourses = new HashMap<Course, Boolean>();
 
-    public Course[] getAvailableCourses(){
-        return new Course[1];
+    public ArrayList<Course> getAvailableCourses() {
+        return availableCourses.keySet().toArray();
     }
 
-    public void addAvailableCourse(Course course){
+    public void addAvailableCourse(Course course) {
+        availableCourses.put(course, true);
 
     }
 
-    public void makeCourseUnavailable(Course course){
-
+    public void makeCourseUnavailable(Course course) {
+        availableCourses.get(course, availableCourses.get(course) + 1);
     }
 
-    public Student[] getEnrolledStudents(){
+    public Student[] getEnrolledStudents() {
+
         return new Student[1];
     }
 
-    public Student[] getPreviousEnrolledStudents(){
+    public Student[] getPreviousEnrolledStudents() {
+
         return new Student[1];
     }
 
-    public Student[] getActiveAndPastStudents(){
+    public Student[] getActiveAndPastStudents() {
+
         return new Student[1];
     }
 
-    public Teacher[] getActiveTeachers(){
+    public Teacher[] getActiveTeachers() {
+
         return new Teacher[1];
     }
 
-    public void printInfo(){
+    public void printInfo() {
         System.out.println("Hello World!!!!!");
     }
 }
