@@ -37,7 +37,7 @@ public class Student{
 
     }
 
-    public  Student(String name){
+    public Student(String name){
         this.name = name;
     }
 
@@ -56,7 +56,7 @@ public class Student{
     public void takeCourse(Course course){
         if (course.getAvailablePlaces()>0){
             courseAndGrade.put(course, 0);
-            course.getEnrolledStudents().add(this); // needs change, should be method in Course object
+            course.addStudent(this);
         }else {
             System.out.println("Could not take course as there would be too many students.");
         }
@@ -64,7 +64,7 @@ public class Student{
 
     public void dropCourse(Course course){
         courseAndGrade.remove(course);
-        course.getEnrolledStudents().remove(this);//needs change
+        course.removeStudent(this);
     }
 
     public ArrayList<Course> getCoursesTaken(){
