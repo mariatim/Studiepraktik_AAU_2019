@@ -26,9 +26,12 @@ public class Course {
      *
      *
      * **/
+   private ArrayList<String> courseName;
+   private ArrayList<String> description;
 
     public  static  void  main(String[]){
-        System.out.println("Hallo my fellow Americans");
+
+        printInfo();
 
     }
 
@@ -36,17 +39,19 @@ public class Course {
 
     }
 
-    public String getCourseName(){
-        return "";
+    public String getCourseName(){ return "";
+     courseName.add("Math");
+     courseName.add("Design");
+     courseName.add("Programming");
     }
 
-    public String getDescription(){
-        return "";
+    public String getDescription() { return "";
+        description.add("Cool Math");
+        description.add("The basics of design");
+        description.add("Progamming 101");
     }
 
-    public int getMaximumNumberOfStudents(){
-        return -1;
-    }
+    public int getMaximumNumberOfStudents(){return -1; }
 
     public Teacher getTeacher(){
         return new Teacher();
@@ -60,9 +65,15 @@ public class Course {
         return -1;
     }
 
-    public int getAvailablePlaces(){
-        return -1;
+    public int getAvailablePlaces(){ return -1;
     }
 
-    public void printInfo(){}
+    public void printInfo(){
+        for (int i = 0; i < courseName.size(); i++) {
+            System.out.println(courseName.get(i));
+            System.out.println(description.get(i));
+            System.out.println(" ");
+        }
+
+    }
 }
