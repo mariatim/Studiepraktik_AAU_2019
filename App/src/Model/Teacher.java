@@ -31,9 +31,9 @@ public class Teacher{
 
     private String name = "";
     private int age = 0;
-    private ArrayList<String> University = new ArrayList<String>;
-    private ArrayList<String> Course = new ArrayList<String>;
-    private ArrayList<String> Student = new ArrayList<String>;
+    private ArrayList<University> universities = new ArrayList<>;
+    private ArrayList<Course> courses = new ArrayList<>;
+    private ArrayList<Student> students = new ArrayList<>;
 
     //constructor
     public Teacher(){
@@ -48,22 +48,22 @@ public class Teacher{
 
     public void setAge(int newAge){ this.age = newAge; }
 
-    public Course[] getCoursesTaught(){ return new Course; }
+    public ArrayList<Course> getCoursesTaught(){ return Course; }
 
-    public Course[] getPreviousCoursesTaught(){ return new Course; }
+    public ArrayList<Course> getPreviousCoursesTaught(){ return Course; }
 
-    public Student[] getAllStudentTaught(){ return new Student; }
+    public students[] getAllStudentTaught(){ return student; }
 
-    public void gradeToStudent(Student student){
+    public void gradeToStudent(students student){
 
     }
 
     public void printInfo(){
-        System.out.print(this.name + " teaches in: " + this.Course[0]);
+        System.out.print(this.name + " teaches in: " + this.courses[0].getName());
         for(int i = 1; i < getCoursesTaught().length; i++){
-            System.out.print(", " + this.Course[i]);
+            System.out.print(", " + this.courses[i].getName());
         }
-        System.out.println(" on " + this.University + ". ");
+        System.out.println(" on " + this.universities.getName() + ". ");
         System.out.println("All students taught are: " + this.getAllStudentTaught());
         System.out.println("------------------------------------------------------");
         System.out.println("more info to come... waiting for setup");
