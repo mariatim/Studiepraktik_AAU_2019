@@ -26,6 +26,17 @@ public class Student{
      *
      *
      * **/
+    public String name;
+    HashMap<String, int> grades;
+
+    public Student(){
+        grades = new HashMap<String, int>();
+    }
+
+    public  Student(String name){
+        this.name = name;
+        grades = new HashMap<String, int>();
+    }
 
     public void attendUniversity(University university){
 
@@ -57,7 +68,7 @@ public class Student{
 
 
     public void printInfo(){
-        System.out.println("Hej med dig jeg er en studerende");
+
     }
 
 }
