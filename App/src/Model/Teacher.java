@@ -1,7 +1,7 @@
 package Model;
 
-// Sego's teacher class
 
+// Sego's teacher class
 public class Teacher{
 
     /**
@@ -29,22 +29,38 @@ public class Teacher{
      *
      * **/
 
-    public Course[] getCoursesTaught(){
-        return new Course[1];
+    private String name = "";
+    private int age = 0;
+    private ArrayList<String> University = new ArrayList<String>;
+    private ArrayList<String> Course = new ArrayList<String>;
+    private ArrayList<String> Student = new ArrayList<String>;
+
+    //constructor
+    public Teacher(){
+        this.name = "no name";
+    }
+    public  Teacher(String newName, int newAge){
+        this.name = newName;
+        this.age = newAge;
     }
 
-    public Course[] getPreviousCoursesTaught(){
-        return new Course[1];
-    }
+    public void setName(String newName){ this.name = newName; }
 
-    public Student[] getAllStudentTaught(){
-        return new Student[1];
-    }
+    public void setAge(int newAge){ this.age = newAge; }
+
+    public Course[] getCoursesTaught(){ return new Course; }
+
+    public Course[] getPreviousCoursesTaught(){ return new Course; }
+
+    public Student[] getAllStudentTaught(){ return new Student; }
 
     public void gradeToStudent(Student student){
 
     }
 
-    public void printInfo(){}
+    public void printInfo(){
+        System.out.println("All students taught: " + this.getAllStudentTaught());
+        System.out.println("more info to come...");
+    }
 
 }
