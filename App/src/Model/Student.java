@@ -28,16 +28,14 @@ public class Student{
      *
      * **/
     public String name;
-    HashMap<String, int> courseAndGrade;
+    private HashMap<String, int> courseAndGrade = new HashMap<String, int>();
 
     public Student(){
         this.name = "Unassigned";
-        courseAndGrade = new HashMap<String, int>();
     }
 
     public  Student(String name){
         this.name = name;
-        courseAndGrade = new HashMap<String, int>();
     }
 
     public void attendUniversity(University university){
@@ -45,7 +43,7 @@ public class Student{
     }
 
     public void takeCourse(Course course){
-        if (course.getNumberOfEnrolledStudents() +1 <= course.getMaximumNumberOfStudents()){
+        if (course.getAvailablePlaces()>0){
             courseAndGrade.put(course.getCourseName, 0);
         }else {
             System.out.println("Could not take course as there would be too many students.")
@@ -53,7 +51,8 @@ public class Student{
     }
 
     public void dropCourse(Course course){
-
+        courseAndGrade.remove(course.getCourseName());
+        course.getMissingVaraible().remove(this);
     }
 
     public void getCoursesTaken(){
