@@ -59,8 +59,14 @@ public class Teacher{
     }
 
     public void printInfo(){
-        System.out.println("All students taught: " + this.getAllStudentTaught());
-        System.out.println("more info to come...");
+        System.out.print(this.name + " teaches in: " + this.Course[0]);
+        for(int i = 1; i < getCoursesTaught().length; i++){
+            System.out.print(", " + this.Course[i]);
+        }
+        System.out.println(" on " + this.University + ". ");
+        System.out.println("All students taught are: " + this.getAllStudentTaught());
+        System.out.println("------------------------------------------------------");
+        System.out.println("more info to come... waiting for setup");
     }
 
 }
