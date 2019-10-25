@@ -28,11 +28,12 @@ public class Student{
      *
      * **/
     public String name;
-    private HashMap<String, int> courseAndGrade = new HashMap<String, int>();
+    private HashMap<Course, int> courseAndGrade = new HashMap<Course, int>();
     private University attendedUniversity;
 
     public Student(){
         this.name = "Unassigned";
+
     }
 
     public  Student(String name){
@@ -53,19 +54,22 @@ public class Student{
 
     public void takeCourse(Course course){
         if (course.getAvailablePlaces()>0){
-            courseAndGrade.put(course.getCourseName, 0);
+            courseAndGrade.put(course, 0);
         }else {
             System.out.println("Could not take course as there would be too many students.")
         }
     }
 
     public void dropCourse(Course course){
-        courseAndGrade.remove(course.getCourseName());
-        course.getMissingVaraible().remove(this);
+        courseAndGrade.remove(course);
+        course.getEnrolledStudents().remove(this);
     }
 
     public void getCoursesTaken(){
-
+        for ( i:
+             ) {
+            
+        }
     }
 
     public void beGraded(int grade, Teacher teacher, Course course){
@@ -74,14 +78,18 @@ public class Student{
 
     public int[] getGrades(){
         int[] grades = new int[courseAndGrade.size()];
-
+        int counter = 0;
+        for (int i : courseAndGrade.values()){
+            grades[counter] = i;
+            counter ++;
+        }
         return grades;
     }
 
     public float getGradesAverage(){
         int sumOfGrades = 0;
         if(courseAndGrade.size() > 0){
-            for (int i : courseAndGrade.value()){
+            for (int i : courseAndGrade.values()){
                 sumOfGrades += i;
             }
 
