@@ -1,4 +1,4 @@
 #Ignore IntelliJ files
 
-App/.idea/*
-App/App.iml
+#App/.idea/*
+#App/App.iml
