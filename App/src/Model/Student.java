@@ -56,7 +56,9 @@ public class Student{
     }
 
 
-    public void printInfo(){}
+    public void printInfo(){
+        System.out.println("Hej med dig jeg er en studerende");
+    }
 
 }
 
